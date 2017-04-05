@@ -1,0 +1,12 @@
+// frontend
+export const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+
+// settings
+export const SET_UNIT_TYPE = 'SET_UNIT_TYPE';
+export const SET_LOCALE = 'SET_LOCALE';
+
+// weather
+export const RECEIVE_PHONE_LOCATION = 'RECEIVE_PHONE_LOCATION';
+export const RECEIVE_CURRENT_WEATHER = 'RECEIVE_CURRENT_WEATHER';
+export const RECEIVE_OLD_WEATHER = 'RECEIVE_OLD_WEATHER';
+export const RECEIVE_CITY_NAME = 'RECEIVE_CITY_NAME';
