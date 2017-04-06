@@ -3,12 +3,12 @@ import * as types from '../actions/actionTypes';
 export default function settings(
   state = {
     location: {
-      city: '',
+      city: null,
       longitude: null,
       latitude: null
     },
-    currentWeather: {},
-    oldWeather: {}
+    currentWeather: null,
+    oldWeather: null
   },
   action = {}
 ) {

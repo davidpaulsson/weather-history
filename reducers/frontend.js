@@ -2,7 +2,7 @@ import * as types from '../actions/actionTypes';
 
 export default function settings(
   state = {
-    isFetching: false
+    isFetching: true
   },
   action = {}
 ) {
