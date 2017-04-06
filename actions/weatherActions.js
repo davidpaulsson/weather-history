@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import fetch from 'fetch-everywhere';
 import moment from 'moment';
 import { Location, Permissions } from 'expo';
 import * as frontendActions from './frontendActions';
