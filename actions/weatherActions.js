@@ -7,9 +7,7 @@ import keys from '../constants';
 
 export const fetchData = () => {
   return dispatch => {
-    // Tell the ui we're doing stuff
-    dispatch(frontendActions.toggleIsFetching(true));
-    // Get our location
+    dispatch(frontendActions.checkIsFetching());
     dispatch(fetchPhoneLocation());
   };
 };
@@ -64,6 +62,7 @@ export const fetchCurrentWeather = ({ latitude, longitude }) => {
       const json = await response.json();
 
       dispatch(receiveCurrentWeather(json.daily.data[0]));
+      dispatch(frontendActions.checkIsFetching());
     } catch (error) {
       console.error(error);
     }
@@ -90,6 +89,7 @@ export const fetchOldWeather = ({ latitude, longitude }) => {
       const json = await response.json();
 
       dispatch(receiveOldWeather(json.daily.data[0]));
+      dispatch(frontendActions.checkIsFetching());
     } catch (error) {
       console.error(error);
     }
@@ -119,6 +119,7 @@ export const fetchCityName = ({ latitude, longitude }) => {
       });
 
       dispatch(receiveCityName(city.long_name));
+      dispatch(frontendActions.checkIsFetching());
     } catch (error) {
       console.error(error);
     }
