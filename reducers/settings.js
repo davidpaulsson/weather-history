@@ -8,20 +8,15 @@ export default function settings(
   action = {}
 ) {
   switch (action.type) {
-    case types.INCREMENT:
-      return {
-        ...state,
-        count: state.count + 1
-      };
-    case types.DECREMENT:
-      return {
-        ...state,
-        count: state.count - 1
-      };
     case types.SET_UNIT_TYPE:
       return {
         ...state,
         unitType: action.unitType
+      };
+    case types.SET_LOCALE:
+      return {
+        ...state,
+        language: action.locale
       };
     default:
       return state;

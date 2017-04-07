@@ -8,7 +8,12 @@ export const decrement = () => ({
   type: types.DECREMENT
 });
 
-export const setUnitType = (unitType: string) => ({
+export const setUnitType = unitType => ({
   type: types.SET_UNIT_TYPE,
   unitType
+});
+
+export const setLocale = locale => ({
+  type: types.SET_LOCALE,
+  locale
 });

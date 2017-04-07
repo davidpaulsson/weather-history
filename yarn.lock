@@ -2697,6 +2697,10 @@ react-deep-force-update@^1.0.0:
   version "0.12.2"
   resolved "https://github.com/exponent/react-native-maps/archive/v0.12.2-exp.1.tar.gz#1984bfe5a8a341dd3b44ad565cfcd1b25a5c2b03"
 
+react-native-navbar@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/react-native-navbar/-/react-native-navbar-1.7.1.tgz#de0e6f8c2156c7e984bb43c76732bd2437b7df0f"
+
 react-native-safe-module@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-native-safe-module/-/react-native-safe-module-1.1.1.tgz#c3eb1d2030661676b075ba8d12c305a31b1d8fb4"
@@ -2709,6 +2713,10 @@ react-native-safe-module@^1.1.0:
   dependencies:
     color "^0.11.1"
     lodash "^4.0.0"
+
+react-native-tableview-simple@^0.16.4:
+  version "0.16.4"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.16.4.tgz#3a34cee505392a6d75ef4fe19ab74c229d02e605"
 
 react-native-vector-icons@4.0.0:
   version "4.0.0"

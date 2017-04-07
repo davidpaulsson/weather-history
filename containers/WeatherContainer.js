@@ -3,10 +3,10 @@ import { Text } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as weatherActions from '../actions/weatherActions';
-import WeatherHistory from '../components/WeatherHistory';
+import Weather from '../components/Weather';
 import CenterCenter from '../components/CenterCenter';
 
-class Weather extends Component {
+class WeatherContainer extends Component {
   constructor(props) {
     super(props);
   }
@@ -21,7 +21,7 @@ class Weather extends Component {
     } else {
       return (
         <CenterCenter>
-          <WeatherHistory {...this.props} />
+          <Weather {...this.props} />
         </CenterCenter>
       );
     }
@@ -49,4 +49,4 @@ export default connect(
   dispatch => ({
     actions: bindActionCreators(weatherActions, dispatch)
   })
-)(Weather);
+)(WeatherContainer);
