@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
+import React from 'react';
+import { View, StatusBar } from 'react-native';
 import Expo from 'expo';
 import moment from 'moment';
 
-import keys from '../constants';
-import CenterCenter from './CenterCenter';
 import TransparentText from './TransparentText';
 
 const { LinearGradient } = Expo;
 
 const WeatherHistory = ({
-  currentTemperatureMax,
-  currentTemperatureMin,
-  currentWeatherSummary,
+  // currentTemperatureMax,
+  // currentTemperatureMin,
+  // currentWeatherSummary,
   oldTemperatureMax,
   oldTemperatureMin,
   oldWeatherSummary,

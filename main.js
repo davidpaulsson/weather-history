@@ -5,7 +5,6 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import { NativeRouter, Route } from 'react-router';
 import CenterCenter from './components/CenterCenter';
 import * as reducers from './reducers';
 import App from './containers/App';
@@ -26,8 +25,13 @@ class Main extends Component {
       'din-engschrift-std': require('./assets/fonts/DINEngschriftStd.ttf')
     });
 
+    this.fontLoaded();
+  }
+
+  fontLoaded() {
     this.setState({ fontLoaded: true });
   }
+
   render() {
     if (!this.state.fontLoaded) {
       return <CenterCenter><Text>Loading...</Text></CenterCenter>;

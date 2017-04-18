@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { NativeRouter, Route, Link, Switch } from 'react-router-native';
+import React from 'react';
+import { NativeRouter, Switch, Route } from 'react-router-native';
 import WeatherContainer from './WeatherContainer';
 import SettingsContainer from './SettingsContainer';
 

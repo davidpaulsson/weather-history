@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as settingsActions from '../actions/settingsActions';

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
-import { Cell, Section, TableView } from 'react-native-tableview-simple';
+import React from 'react';
+import { Cell, Section } from 'react-native-tableview-simple';
 import styled from 'styled-components/native';
 import availableLanguages from '../data/availableLanguages';
 
