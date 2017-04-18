@@ -1,36 +1,66 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Constants, Location, Permissions } from 'expo';
+import { Platform, StyleSheet, Text, View, StatusBar } from 'react-native';
+import Expo from 'expo';
 import moment from 'moment';
+
 import keys from '../constants';
 import CenterCenter from './CenterCenter';
+import TransparentText from './TransparentText';
 
-const WeatherHistory = (
-  {
-    currentTemperatureMax,
-    currentTemperatureMin,
-    currentWeatherSummary,
-    oldTemperatureMax,
-    oldTemperatureMin,
-    oldWeatherSummary
-  }
-) => {
-  return (
-    <View>
-      <CenterCenter>
-        <Text>Current weather</Text>
-        <Text>{Math.round(currentTemperatureMax)} °C(max)</Text>
-        <Text>{Math.round(currentTemperatureMin)} °C(min)</Text>
-        <Text>{currentWeatherSummary}</Text>
-      </CenterCenter>
-      <CenterCenter>
-        <Text>Last years weather</Text>
-        <Text>{Math.round(oldTemperatureMax)} °C(max)</Text>
-        <Text>{Math.round(oldTemperatureMin)} °C(min)</Text>
-        <Text>{oldWeatherSummary}</Text>
-      </CenterCenter>
+const { LinearGradient } = Expo;
+
+const WeatherHistory = ({
+  currentTemperatureMax,
+  currentTemperatureMin,
+  currentWeatherSummary,
+  oldTemperatureMax,
+  oldTemperatureMin,
+  oldWeatherSummary,
+  city
+}) => (
+  <LinearGradient
+    colors={['#182330', '#334a83', '#a27df8']}
+    style={{
+      flex: 1,
+      flexDirection: 'column'
+    }}
+  >
+    <StatusBar hidden={true} />
+    <View style={{ padding: 30 }}>
+      <TransparentText text={city} style={{ fontSize: 22 }} />
+      <TransparentText
+        text={moment().subtract(1, 'year').format('LL')}
+        style={{ fontSize: 28 }}
+      />
     </View>
-  );
-};
+    <View style={{ flex: 1, justifyContent: 'center', padding: 30 }}>
+      <TransparentText text="It was" style={{ opacity: 0.6 }} />
+      <TransparentText text={`${Math.round(oldTemperatureMax)} degrees and`} />
+      <TransparentText text={oldWeatherSummary} />
+    </View>
+    <View
+      style={{
+        flexDirection: 'row',
+        padding: 30
+      }}
+    >
+      <View style={{ flex: 1 }}>
+        <TransparentText text="Temp" style={{ fontSize: 18 }} />
+        <TransparentText
+          text={`${Math.round(oldTemperatureMax)}°/${Math.round(oldTemperatureMin)}°`}
+          style={{ fontSize: 24 }}
+        />
+      </View>
+      <View style={{ flex: 1 }}>
+        <TransparentText text="Humidity" style={{ fontSize: 18 }} />
+        <TransparentText text="65%" style={{ fontSize: 24 }} />
+      </View>
+      <View style={{ flex: 1 }}>
+        <TransparentText text="Wind" style={{ fontSize: 18 }} />
+        <TransparentText text="NW 6 MPS" style={{ fontSize: 24 }} />
+      </View>
+    </View>
+  </LinearGradient>
+);
 
 export default WeatherHistory;

@@ -24,7 +24,7 @@ export const receivePhoneLocation = ({ latitude, longitude }) => ({
   }
 });
 
-export const fetchPhoneLocation = () => {
+const fetchPhoneLocation = () => {
   return async dispatch => {
     try {
       let { status } = await Permissions.askAsync(Permissions.LOCATION);
@@ -52,7 +52,7 @@ export const fetchPhoneLocation = () => {
  * FETCH_CURRENT_WEATHER
  */
 
-export const fetchCurrentWeather = ({ latitude, longitude }) => {
+const fetchCurrentWeather = ({ latitude, longitude }) => {
   return async (dispatch, getState) => {
     try {
       const { unitType } = getState().settings;
@@ -78,7 +78,7 @@ export const receiveCurrentWeather = weather => ({
  * FETCH_OLD_WEATHER
  */
 
-export const fetchOldWeather = ({ latitude, longitude }) => {
+const fetchOldWeather = ({ latitude, longitude }) => {
   return async (dispatch, getState) => {
     try {
       const { unitType } = getState().settings;
@@ -104,7 +104,7 @@ export const receiveOldWeather = weather => ({
  * FETCH_CITY_NAME
  */
 
-export const fetchCityName = ({ latitude, longitude }) => {
+const fetchCityName = ({ latitude, longitude }) => {
   return async dispatch => {
     try {
       const response = await fetch(

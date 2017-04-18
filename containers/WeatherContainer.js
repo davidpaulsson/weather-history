@@ -19,11 +19,7 @@ class WeatherContainer extends Component {
     if (this.props.loading) {
       return <CenterCenter><Text>Loading...</Text></CenterCenter>;
     } else {
-      return (
-        <CenterCenter>
-          <Weather {...this.props} />
-        </CenterCenter>
-      );
+      return <Weather {...this.props} />;
     }
   }
 }
@@ -37,6 +33,7 @@ export default connect(
     } else {
       return {
         loading: false,
+        city: state.weather.location.city,
         currentTemperatureMax: state.weather.currentWeather.temperatureMax,
         currentTemperatureMin: state.weather.currentWeather.temperatureMin,
         currentWeatherSummary: state.weather.currentWeather.summary,

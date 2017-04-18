@@ -7,8 +7,8 @@ import SettingsContainer from './SettingsContainer';
 const App = () => (
   <NativeRouter>
     <Switch>
-      <Route exact path="/" component={SettingsContainer} />
-      <Route exact path="/settings" component={WeatherContainer} />
+      <Route exact path="/settings" component={SettingsContainer} />
+      <Route exact path="/" component={WeatherContainer} />
     </Switch>
   </NativeRouter>
 );
